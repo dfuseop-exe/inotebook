@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 const JWT_SECRIT = "sushantshinde$2418"
 
-// Create a User using: POST "/api/auth/createuser". No login required
+//Route - 1 : Create a User using: POST "/api/auth/createuser". No login required
 
 router.post("/createuser",[
     body("email", "Enter valid Email").isEmail(),
@@ -31,6 +31,7 @@ router.post("/createuser",[
           .json({ error: "Sorry a user with this email already exists" });
       }
 
+      //getsalt will generate salt 
       const salt = await bcrypt.genSalt(10);
       const secPass = await bcrypt.hash(req.body.password , salt)
       //Create New User
@@ -56,7 +57,7 @@ router.post("/createuser",[
   }
 );
 
-// Authenticate a User using: POST "/api/auth/login". No login required
+//Route - 2 : Authenticate a User using: POST "/api/auth/login". No login required
 
 router.post("/login",[ body("email", "Enter valid Email").isEmail(),
 body("password", "Password is can not be blank").exists()
@@ -70,6 +71,7 @@ body("password", "Password is can not be blank").exists()
     const {email , password} = req.body ;
 
     try {
+      //findone is used to find in db
       let user = await User.findOne({email});
 
       if(!user){
@@ -85,6 +87,7 @@ body("password", "Password is can not be blank").exists()
         user : user.id,
       }
 
+        //sign method is used to create signature in jwt which consist data + secret code
       const authtoken = jwt.sign(data , JWT_SECRIT);
       res.json({authtoken});
 
@@ -94,6 +97,17 @@ body("password", "Password is can not be blank").exists()
     }
 
 })
+
+//Route - 3 :get Loggedin User details using: POST "/api/auth/getuser". login required
+
+router.post("/getuser",async (req, res) => {
+try {
+  userId = "todo"
+  const user = await User.findById(userId).select("-password")
+} catch (error) {
+  console.error(error.message);
+  res.status(500).send("Internal server Error");
+}})
 
 module.exports = router;
 

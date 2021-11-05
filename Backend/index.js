@@ -5,6 +5,7 @@ connectToMongo();
 const app = express()
 const port = 5000
 
+//middleware for app to use json
 app.use(express.json())
 
 // Available Routes

@@ -1,19 +1,19 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-var fetchuser = require("../middleware/fetchuser");
-const Notes = require("../models/notes");
-const { body, validationResult } = require("express-validator");
+const fetchuser = require('../middleware/fetchuser');
+const Note = require('../models/Notes');
+const { body, validationResult } = require('express-validator');
 
-// ROUTE 1:Get all notes using: GET "/api/auth/fetchallnotes".login required
-router.get("/fetchallnotes", fetchuser, async (req, res) => {
- try {
-    const notes = await Notes.find({ user: req.user.id });
-    res.json(notes);
- } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Internal Server Error");
-}
-});
+// ROUTE 1: Get All the Notes using: GET "/api/auth/getuser". Login required
+router.get('/fetchallnotes', fetchuser, async (req, res) => {
+    try {
+        const notes = await Note.find({ user: req.user.id });
+        res.json(notes)
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
 
 // ROUTE 2: Add a new Note using: POST "/api/auth/addnote". Login required
 router.post('/addnote', fetchuser, [
@@ -41,4 +41,4 @@ router.post('/addnote', fetchuser, [
         }
     })
 
-module.exports = router;
+module.exports = router

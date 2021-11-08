@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
-import notecontext from "../context/notes/noteContext"
+import React from "react";
+import Notes from "./Notes";
 
 export default function Home() {
   
-  const context = useContext(notecontext)
-  const {notes , setnotes} = context;
   return (
 
     <div  style={{fontFamily:'Comfortaa'}}>
@@ -49,12 +47,10 @@ export default function Home() {
         </form>
       </div>
 
-      <div className="container my-3">
-        <h2 style={{ fontSize : "40px"}}>Your Notes</h2>
-        {notes.map((notes)=>{
-          return notes.title;
-        })}
-      </div>
+      {/* Notes component */}
+
+      <Notes/>
+
     </div>
   );
 }

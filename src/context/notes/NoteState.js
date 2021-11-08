@@ -20,6 +20,46 @@ const NoteState = (props) => {
           "tag": "helth",
           "date": "2021-11-08T09:18:25.153Z",
           "__v": 0
+        },
+        {
+          "_id": "6188eb618deda5d92cea1957",
+          "title": "Mango juice",
+          "description": "i have to drink mango juice",
+          "tag": "helth",
+          "date": "2021-11-08T09:18:25.153Z",
+          "__v": 0
+        },
+        {
+          "_id": "6188eb618deda5d92cea1957",
+          "title": "Mango juice",
+          "description": "i have to drink mango juice",
+          "tag": "helth",
+          "date": "2021-11-08T09:18:25.153Z",
+          "__v": 0
+        },
+        {
+          "_id": "6188eb618deda5d92cea1957",
+          "title": "Mango juice",
+          "description": "i have to drink mango juice",
+          "tag": "helth",
+          "date": "2021-11-08T09:18:25.153Z",
+          "__v": 0
+        },
+        {
+          "_id": "6188eb618deda5d92cea1957",
+          "title": "Mango juice",
+          "description": "i have to drink mango juice",
+          "tag": "helth",
+          "date": "2021-11-08T09:18:25.153Z",
+          "__v": 0
+        },
+        {
+          "_id": "6188eb618deda5d92cea1957",
+          "title": "Mango juice",
+          "description": "i have to drink mango juice",
+          "tag": "helth",
+          "date": "2021-11-08T09:18:25.153Z",
+          "__v": 0
         }
       ]
 

@@ -9,9 +9,9 @@ export default function Notes() {
   return (
     <div className="container my-3">
       <h2 style={{ fontSize: "40px" }}>You Notes</h2>
-      <div className="row ">
+      <div className="row" >
         {notes.map((note) => {
-          return <NoteItem note={note} />;
+          return <NoteItem key={note._id} note={note} />;
         })}
       </div>
     </div>

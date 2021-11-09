@@ -1,85 +1,105 @@
+import NoteContext from "./noteContext";
 import { useState } from "react";
-import noteContext from "./noteContext";
 
-
-const NoteState = (props) => {
-
+const NoteState = (props)=>{
     const notesInitial = [
-        
         {
-          "_id": "6188ebh618deda5d92icea1957",
-          "title": "Mango juice",
-          "description": "i have to drink mango juice",
-          "tag": "helth",
-          "date": "2021-11-08T09:18:25.153Z",
+          "_id": "61322f195153781a8ca8d0e06",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.509Z",
           "__v": 0
         },
         {
-          "_id": "618d8eb61q8deda5d92cea1957",
-          "title": "Mango juice",
-          "description": "i have to drink mango juice",
-          "tag": "helth",
-          "date": "2021-11-08T09:18:25.153Z",
+          "_id": "61322f195531781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
           "__v": 0
         },
         {
-          "_id": "6188eb618deda5d92cea1s957",
-          "title": "Mango juice",
-          "description": "i have to drink mango juice",
-          "tag": "helth",
-          "date": "2021-11-08T09:18:25.153Z",
+          "_id": "61322f19553781a8ca8d0e081",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
           "__v": 0
         },
         {
-          "_id": "6188ewb618d6eda5d92cea1957",
-          "title": "Mango juice",
-          "description": "i have to drink mango juice",
-          "tag": "helth",
-          "date": "2021-11-08T09:18:25.153Z",
+          "_id": "61322f19553781a8ca8d0e082",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
           "__v": 0
         },
         {
-          "_id": "6188eb618de2dea5d92cea1957",
-          "title": "Mango juice",
-          "description": "i have to drink mango juice",
-          "tag": "helth",
-          "date": "2021-11-08T09:18:25.153Z",
+          "_id": "61322f195537812a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
           "__v": 0
         },
         {
-          "_id": "6188eb618dedra5d929cea1957",
-          "title": "Mango juice",
-          "description": "i have to drink mango juice",
-          "tag": "helth",
-          "date": "2021-11-08T09:18:25.153Z",
+          "_id": "613222f19553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
           "__v": 0
         },
         {
-          "_id": "6188eb2618dqda5yd92cea1957",
-          "title": "Mango juice",
-          "description": "i have to drink mango juice",
-          "tag": "helth",
-          "date": "2021-11-08T09:18:25.153Z",
+          "_id": "61322f119553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a066",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2021-09-03T14:20:09.668Z",
           "__v": 0
         },
-        {
-          "_id": "6188eb618ddeqda5d92cea1957",
-          "title": "Mango juice",
-          "description": "i have to drink mango juice",
-          "tag": "helth",
-          "date": "2021-11-08T09:18:25.153Z",
-          "__v": 0
-        }
       ]
+      const [notes, setNotes] = useState(notesInitial)
 
-      const [notes, setnotes] = useState(notesInitial)
 
-    return(
-        <noteContext.Provider value={{notes , setnotes}}>
+      // Add a Note
+      const addNote = (title, description, tag)=>{
+        // TODO: API Call
+        console.log("Adding a new note")
+        const note = {
+          "_id": "61322f119553781a8ca8d0e08",
+          "user": "6131dc5e3e4037cd4734a0664",
+          "title": title,
+          "description": description,
+          "tag": tag,
+          "date": "2021-09-03T14:20:09.668Z",
+          "__v": 0
+        };
+        setNotes(notes.concat(note)) 
+      }
+
+      // Delete a Note
+      const deleteNote = ()=>{
+
+      }
+      // Edit a Note
+      const editNote = ()=>{
+
+      }
+    
+    return (
+        <NoteContext.Provider value={{notes, addNote,deleteNote, editNote }}>
             {props.children}
-        </noteContext.Provider>
+        </NoteContext.Provider>
     )
 }
 
 export default NoteState;
-//className={`nav-link ${location.pathname ==="/about" ? "active" : ""}`}

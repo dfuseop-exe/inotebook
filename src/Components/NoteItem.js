@@ -12,6 +12,7 @@ export default function NoteItem(props) {
           </h5>
           <h4>Description :-</h4>
           <p className="card-text">
+              
             {note.description}
           </p>
 

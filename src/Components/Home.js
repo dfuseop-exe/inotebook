@@ -6,7 +6,7 @@ export default function Home() {
   
   return (
 
-    <div  style={{fontFamily:'Comfortaa'}}>
+    <div className="container" style={{fontFamily:'Comfortaa'}}>
       
       {/* Notes component */}
 

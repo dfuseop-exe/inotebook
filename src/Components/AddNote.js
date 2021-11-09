@@ -16,7 +16,7 @@ const AddNote = () => {
         setNote({...note, [e.target.name]: e.target.value})
     }
     return (
-        <div className="container my-3">
+        <div className="my-3">
             <h2>Add a Note</h2>
             <form className="my-3">
                 <div className="mb-3">
@@ -27,11 +27,8 @@ const AddNote = () => {
                     <label htmlFor="description" className="form-label">Description</label>
                     <input type="text" className="form-control" id="description" name="description" onChange={onChange} />
                 </div>
-                <div className="mb-3 form-check">
-                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" className="btn btn-primary" onClick={handleClick}>Submit</button>
+                
+                <button type="submit" className="btn btn-dark" onClick={handleClick}>Add Note</button>
             </form>
         </div>
     )
